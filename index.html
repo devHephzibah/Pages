@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A Flutter application.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Flutter App">
+
+  <!-- Offline fonts -->
+  <style>
+    @font-face {
+      font-family: 'MaterialIcons';
+      src: url('assets/fonts/MaterialIcons-Regular.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      font-weight: 400;
+      src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      font-weight: 700;
+      src: url('assets/fonts/Roboto-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'NotoColorEmoji';
+      src: url('web/assets/fonts/NotoColorEmoji.ttf') format('truetype');
+    }
+
+    body {
+      font-family: 'Roboto', 'NotoColorEmoji', sans-serif;
+    }
+  </style>
+
+  <title>Flutter App Offline</title>
+  <base href="/">
+</head>
+
+<body>
+  <script src="flutter.js" defer></script>
+  <script>
+    window.addEventListener('load', function () {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: null,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
